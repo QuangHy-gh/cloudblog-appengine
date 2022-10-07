@@ -1,0 +1,19 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background-color: black;
+}
+
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+}

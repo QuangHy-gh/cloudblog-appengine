@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load hitcount_tags %}
+
+{% block content %}
+<div class="post-entry">
+    <h2>{{ postdetail.title }}</h2>
+    {% for obj in hits%}
+    {% if obj.object_pk == postdetail.id %}
+    <p>{{ obj.hits }} views </p>
+    {% endif %}
+    {% endfor %}
+    <p> {{ postdetail.body }}</p>
+
+
+
+
+
+</div>
+
+
+
+
+{% endblock content %}
