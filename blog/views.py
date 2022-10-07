@@ -18,28 +18,8 @@ class BlogDetailView(HitCountDetailView, DetailView):
     context_object_name = "postdetail"
 
     count_hit = True
-    """
-    data = {
-        "hits": get_cloudapi_data(),
-    }
-    
-    # for id in id_qs
 
-    def get_hits(self):
-        for value in self.data["hits"][0].items():
-            if value == self.id_qs:
-                hits = value
-
-        return hits
-    """
     id_qs = Post.objects.values_list("id")
-    """
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context["id_qs"] = Post.objects.values_list("id", flat=True)
-        return context
-    """
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -48,13 +28,5 @@ class BlogDetailView(HitCountDetailView, DetailView):
         return context
 
 
-# print(BlogDetailView.id_qs)
-# print(BlogDetailView.data["hits"][0].items())
-
-
 class ResumePageView(TemplateView):
     template_name = "resume.html"
-
-
-# test = BlogDetailView()
-# print(test.get_context_data())
