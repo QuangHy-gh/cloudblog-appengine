@@ -6,8 +6,8 @@ steps:
   - '-c'
   - |
       echo "branch $BRANCH_NAME"
-      if [ ! -z "$BRANCH_NAME" -a -d "terraform/environments/$BRANCH_NAME/" ]; then
-        cd terraform/environments/$BRANCH_NAME
+      if [ ! -z "$BRANCH_NAME" -a -d "cloudblog-terraform-config/environments/$BRANCH_NAME/" ]; then
+        cd cloudblog-terraform-config/environments/$BRANCH_NAME
         echo "run init"
         terraform init
         echo "run validate"
@@ -16,7 +16,7 @@ steps:
         terraform plan -out terraform.plan
         terraform apply -auto-approve terraform.plan
       else
-        for dir in terraform/environments/*/
+        for dir in cloudblog-terraform-config/environments/*/
         do
           cd ${dir}
           env=${dir%*/}
