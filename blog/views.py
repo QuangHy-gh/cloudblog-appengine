@@ -1,14 +1,7 @@
-from re import L
-from turtle import title
-from typing import Any
-from unicodedata import name
-from urllib import request
 from django.views.generic import ListView, TemplateView, DetailView
 from .models import Post
 from hitcount.views import HitCountDetailView
 from .services import get_cloudapi_data
-import requests
-import json
 from django.shortcuts import render
 
 # Create your views here.
