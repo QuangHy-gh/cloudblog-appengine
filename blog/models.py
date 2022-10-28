@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -12,7 +13,8 @@ class Post(models.Model):
         "auth.User",
         on_delete=models.CASCADE,
     )
-    body = models.TextField()
+    # body = models.TextField()
+    body = RichTextField(blank=True, null=True)
 
     def __str__(self):
         return self.title
