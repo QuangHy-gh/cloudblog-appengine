@@ -10,6 +10,4 @@ def get_cloudapi_data():
     return hitcount
 
 
-print(get_cloudapi_data())
-
 # <p> {% get_hit_count for postdetail %} views</p>
