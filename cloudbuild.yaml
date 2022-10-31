@@ -2,6 +2,8 @@ steps:
 - id: 'tf plan'
   name: 'hashicorp/terraform:1.0.0'
   entrypoint: 'sh'
+  env: 
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
   args:
   - '-c'
   - |
@@ -21,8 +23,6 @@ steps:
           cd ${dir}
           env=${dir%*/}
           env=${env#*/}
-          env: 
-            SECRET_KEY: ${{ secrets.SECRET_KEY }}
           echo ""
           echo "*************** TERRAFOM PLAN ******************"
           echo "******* At environment: ${env} ********"
