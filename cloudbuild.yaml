@@ -31,7 +31,15 @@ steps:
           cd ../../
         done
       fi
+steps:
+...
+- name: Run Tests
+  env: 
+    SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  run: |
+    python manage.py test
 
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
   timeout: "1600s"
+
