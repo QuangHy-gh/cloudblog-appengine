@@ -31,8 +31,7 @@ steps:
           cd ../../
         done
       fi
-steps:
-...
+
 - name: Run Tests
   env: 
     SECRET_KEY: ${{ secrets.SECRET_KEY }}
