@@ -21,6 +21,8 @@ steps:
           cd ${dir}
           env=${dir%*/}
           env=${env#*/}
+          env: 
+            SECRET_KEY: ${{ secrets.SECRET_KEY }}
           echo ""
           echo "*************** TERRAFOM PLAN ******************"
           echo "******* At environment: ${env} ********"
@@ -31,12 +33,6 @@ steps:
           cd ../../
         done
       fi
-
-- name: Run Tests
-  env: 
-    SECRET_KEY: ${{ secrets.SECRET_KEY }}
-  run: |
-    python manage.py test
 
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
