@@ -3,7 +3,7 @@ steps:
   name: 'hashicorp/terraform:1.0.0'
   entrypoint: 'sh'
   env: 
-  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+    SECRET_KEY: ${{ secrets.SECRET_KEY }}
   args:
   - '-c'
   - |
