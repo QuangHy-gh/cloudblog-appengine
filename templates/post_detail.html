@@ -9,7 +9,7 @@
     <p>{{ obj.hits }} views </p>
     {% endif %}
     {% endfor %}
-    <p> {{ postdetail.body }}</p>
+    <p> {{ postdetail.body | safe }}</p>
 
 
 
